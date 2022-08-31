@@ -1,0 +1,199 @@
+<html>  
+<head>  
+<title>  
+jQuery pagination  
+</title>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<head>  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">  
+<style>  
+
+    .simple-pagination ul{
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        margin-left: 10px;
+    }
+
+    .simple-pagination  li{
+        display: inline-block;
+        margin: 2px;
+        
+    }
+
+    .simple-pagination  li a, .simple-pagination  li span{
+        display: block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background-color: #fff;
+        text-align: center;
+        text-decoration: none;
+        color : #252525;
+        border-radius: 4px;
+        margin: 5px;
+        box-shadow: inset 0 5px 10px rgba(0, 0, 0, .1) 0 2px 5px rgba(0, 0, 0, .5);
+    }
+
+    .simple-pagination  li a:hover{
+        background: #000;
+        color: #fff;
+    }
+
+    .simple-pagination .current{
+        color:#fff;
+        background-color: #000;
+        border-color: rgb(255, 255, 255);
+        border: 1px solid;
+        cursor: pointer;
+
+
+    }
+
+    .simple-pagination .prev.current,
+    .simple-pagination .next.current{
+        background: #222;
+        border:none;
+    }
+
+    .page-link{
+        padding:0 !important;
+    }
+
+</style>  
+
+
+<!-- <script>  
+$(document).ready (function () {  
+//     $('#data').after ('<div id="nav"></div>');  
+//     var rowsShown = 5;  
+//     var rowsTotal = $('#data tbody tr').length;  
+//     var numPages = rowsTotal/rowsShown;  
+//     for (i = 0;i < numPages;i++) {  
+//         var pageNum = i + 1;  
+//         $('#nav').append ('<a href="#" rel="'+i+'">'+pageNum+'</a> ');  
+//     }  
+//     $('#data tbody tr').hide();  
+//     $('#data tbody tr').slice (0, rowsShown).show();  
+//     $('#nav a:first').addClass('active');  
+//     $('#nav a').bind('click', function() {  
+//     $('#nav a').removeClass('active');  
+//    $(this).addClass('active');  
+//         var currPage = $(this).attr('rel');  
+//         var startItem = currPage * rowsShown;  
+//         var endItem = startItem + rowsShown;  
+//         $('#data tbody tr').css('opacity','0.0').hide().slice(startItem, endItem).  
+//         css('display','table-row').animate({opacity:1}, 300);  
+//     });  
+
+// $('#demo').pagination({
+//     dataSource: [$("#data tr")],
+//     callback: function(data, pagination) {
+//         // template method of yourself
+//         var html = template(data);
+//         dataContainer.html(html);
+//     }
+// })
+
+
+
+});  
+</script>   -->
+</head>  
+<body>  
+
+
+    <div class="container">
+        <div class="list-wrapper">
+            <div class="list-item">
+                <h4>One</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo non inventore nihil dolore excepturi autem, facilis quidem nisi facere expedita, veritatis eveniet deserunt velit error earum in assumenda ratione aspernatur eaque. Voluptatem ducimus molestiae rem asperiores fugit! Perspiciatis, autem eveniet.</p>
+            </div>
+
+            <div class="list-item">
+                <h4>Two</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo non inventore nihil dolore excepturi autem, facilis quidem nisi facere expedita, veritatis eveniet deserunt velit error earum in assumenda ratione aspernatur eaque. Voluptatem ducimus molestiae rem asperiores fugit! Perspiciatis, autem eveniet.</p>
+            </div>
+
+            <div class="list-item">
+                <h4>Three</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo non inventore nihil dolore excepturi autem, facilis quidem nisi facere expedita, veritatis eveniet deserunt velit error earum in assumenda ratione aspernatur eaque. Voluptatem ducimus molestiae rem asperiores fugit! Perspiciatis, autem eveniet.</p>
+            </div>
+
+            <div class="list-item">
+                <h4>Four</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo non inventore nihil dolore excepturi autem, facilis quidem nisi facere expedita, veritatis eveniet deserunt velit error earum in assumenda ratione aspernatur eaque. Voluptatem ducimus molestiae rem asperiores fugit! Perspiciatis, autem eveniet.</p>
+            </div>
+
+            <div class="list-item">
+                <h4>Five</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo non inventore nihil dolore excepturi autem, facilis quidem nisi facere expedita, veritatis eveniet deserunt velit error earum in assumenda ratione aspernatur eaque. Voluptatem ducimus molestiae rem asperiores fugit! Perspiciatis, autem eveniet.</p>
+            </div>
+
+            <div class="list-item">
+                <h4>Six</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo non inventore nihil dolore excepturi autem, facilis quidem nisi facere expedita, veritatis eveniet deserunt velit error earum in assumenda ratione aspernatur eaque. Voluptatem ducimus molestiae rem asperiores fugit! Perspiciatis, autem eveniet.</p>
+            </div>
+
+            <div class="list-item">
+                <h4>Seven</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo non inventore nihil dolore excepturi autem, facilis quidem nisi facere expedita, veritatis eveniet deserunt velit error earum in assumenda ratione aspernatur eaque. Voluptatem ducimus molestiae rem asperiores fugit! Perspiciatis, autem eveniet.</p>
+            </div>
+
+            <div class="list-item">
+                <h4>Eight</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo non inventore nihil dolore excepturi autem, facilis quidem nisi facere expedita, veritatis eveniet deserunt velit error earum in assumenda ratione aspernatur eaque. Voluptatem ducimus molestiae rem asperiores fugit! Perspiciatis, autem eveniet.</p>
+            </div>
+
+            <div class="list-item">
+                <h4>Nine</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo non inventore nihil dolore excepturi autem, facilis quidem nisi facere expedita, veritatis eveniet deserunt velit error earum in assumenda ratione aspernatur eaque. Voluptatem ducimus molestiae rem asperiores fugit! Perspiciatis, autem eveniet.</p>
+            </div>
+
+            <div class="list-item">
+                <h4>Ten</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo non inventore nihil dolore excepturi autem, facilis quidem nisi facere expedita, veritatis eveniet deserunt velit error earum in assumenda ratione aspernatur eaque. Voluptatem ducimus molestiae rem asperiores fugit! Perspiciatis, autem eveniet.</p>
+            </div>
+
+            <div class="list-item">
+                <h4>Eleven</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo non inventore nihil dolore excepturi autem, facilis quidem nisi facere expedita, veritatis eveniet deserunt velit error earum in assumenda ratione aspernatur eaque. Voluptatem ducimus molestiae rem asperiores fugit! Perspiciatis, autem eveniet.</p>
+            </div>
+        </div>
+
+
+        <div id="pagination-container">
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"> </script>  
+<!-- <script src="https://pagination.js.org/dist/2.1.5/pagination.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js" integrity="sha512-6Hh5t357FBmgv+xCBoaF9Gbk6sEF00WCH5wC8R1uieSL1R4pN2HFZx/cyE/TdfW+dxtOBWcHF1ZYdV8XLbpprA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script>
+    var items = $(".list-wrapper .list-item");
+    var numItems = items.length;
+    var perPage =3;
+
+    items.slice(perPage).hide();
+
+    $("#pagination-container").pagination({
+        items:numItems,
+        itemsOnPage:perPage,
+        prevText : "<",
+        nextText : ">",
+        onPageClick : function(pageNumber){
+            var showFrom = perPage * (pageNumber -1);
+            var showTo = showFrom + perPage;
+            items.hide().slice(showFrom, showTo).show()
+        }
+    })
+    
+    
+</script>
+ 
+</body>  
+</html>  
